@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{DatasService} from '../datas.service';
 
 @Component({
   selector: 'app-timeline-cards',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./timeline-cards.component.css']
 })
 export class TimelineCardsComponent implements OnInit {
+  cardsFounds= this.datasService.cardsFounds;
 
-  constructor() { }
+  constructor(private datasService: DatasService) { }
 
   ngOnInit() {
   }

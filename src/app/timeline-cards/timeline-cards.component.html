@@ -6,31 +6,13 @@
   <h3>Invention du plus célèbre réseau social</h3>
 </div>
 
-<h1> Carte trouvées</h1>
+<h1> Cartes trouvées</h1>
 
 <div class="foundCards">
-  <div>
-    <h2>Twitter</h2>
-    <h3>2006-03-21</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/fr/c/c8/Twitter_Bird.svg">
-    <h3>Le réseau social préféré de D. Trump</h3>
-  </div>
-  <div>
-    <h2>Snapchat</h2>
-    <h3>2011-09-01</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/fr/a/ad/Logo-Snapchat.png">
-    <h3>Pour ceux qui ont peur que les photos restent ...</h3>
-  </div>
-  <div>
-    <h2>Windows</h2>
-    <h3>1985-11-20</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Windows_1.0_screenshot.png">
-    <h3>Invention du plus célèbre réseau social</h3>
-  </div>
-  <div>
-    <h2>Web</h2>
-    <h3>1989-03-13</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/WWW_logo_by_Robert_Cailliau.svg">
-    <h3>Invention du plus célèbre réseau social</h3>
+  <div *ngFor="let cardFound of cardsFounds">
+    <h2>{{cardFound.name}}</h2>
+    <h3>{{cardFound.date}}</h3>
+    <img src={{cardFound.imageUrl}}>
+    <h3>{{cardFound.description}}</h3>
   </div>
 </div>
