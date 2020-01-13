@@ -1,0 +1,30 @@
+<section>
+    <button class="button" type="submit">Ajouter un timeline</button>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Catégorie</th>
+            <th>Date de création</th>
+            <th>Date de mise à jour</th>
+            <th>Nombre de cartes</th>
+            <th>Editer?</th>
+            <th>Jouer!</th>
+            <th>Supprimer?</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let timeline of timelineList; index as timelineId">
+                <td> {{timeline.id}}</td>
+                <td> {{timeline.name}}</td>
+                <td> {{timeline.category}}</td>
+                <td> {{timeline.creationDate}}</td>
+                <td> {{timeline.updateDate}}</td>
+                <td> {{timeline.cardList.length}}</td>
+                <td> <a>Editer</a></td>
+                <td> <a [routerLink]="['cards', timelineId]">Jouer</a></td>
+                <td> <button (click)="supprimerTimeline(timelineId)" class="supprimer">Supprimer</button></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
