@@ -10,14 +10,20 @@ export class TimelineListComponent implements OnInit {
   
   timelineList;
 
-  constructor(private datasService: DatasService) { }
+  constructor(
+    private datasService: DatasService,
+    ) { }
 
   ngOnInit() {
     this.datasService.getTimelines().subscribe(dataList => this.timelineList = dataList);
   }
   supprimerTimeline(timelineId) {
-    this.datasService.supprimerTimeline(timelineId);
-    
+    this.datasService.supprimerTimeline(timelineId
+      );
+  }
+
+  transfertCardList(cardList) {
+    this.datasService.getCardList(cardList);
   }
 
 }
