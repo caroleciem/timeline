@@ -1,7 +1,7 @@
 <h1> Carte à deviner</h1>
 
 <form [formGroup]="guessDateForm" (ngSubmit)="onSubmit(guessDateForm.value)">
-  <input id="guessedDate" type="number" formControlName="guessedDate" placeholder="Entrez la date" value="0" min="0" max="3000">
+  <input id="guessedDate" type="number" formControlName="date" placeholder="Entrez la date" value="0" min="0" max="3000"step="1">
   <button class="button" type="submit">DEVINER</button>
 </form>
 

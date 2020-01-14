@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatasService } from '../datas.service';
 import { FormBuilder } from '@angular/forms';
-import {Cards} from '../Cards';
+import { Cards } from '../Cards';
 
 @Component({
   selector: 'app-timeline-cards',
@@ -18,27 +18,38 @@ export class TimelineCardsComponent implements OnInit {
   constructor(
     private datasService: DatasService,
     private formBuilder: FormBuilder,
-    ) {
-      this.guessDateForm = this.formBuilder.group({
-        guessedDate: '',
-      });
+  ) {
+    this.guessDateForm = this.formBuilder.group({
+      date: '',
+    });
   }
 
   ngOnInit() {
   }
 
   onSubmit(guessedDate) {
-    if (guessedDate == this.card.date){
-      console.log("ok");
-      this.cardsFounds.push(this.card);
-      this.cardList.splice(2,1);
-      console.log(this.cardList);
-    }else {
-      console.log(guessedDate);
-      console.log(this.card.date);
-      console.log("ko"); 
-     
+    if (isNaN(guessedDate.date) == true){
+      alert("la date doit être entre 0 et 3000");
+      this.guessDateForm.reset();
+      return false;
     }
-    this.guessDateForm.reset();  
+    if ((guessedDate.date > -1) && (guessedDate.date < 3000))  {
+      if (guessedDate.date == this.card.date.substr(0, 4)) {
+        console.log("ok");
+        this.cardsFounds.push(this.card);
+        this.cardList.splice(2, 1);
+        return true;
+      } else {
+        console.log("ko");
+      }
+      this.guessDateForm.reset();
+    } else {
+      alert("la date doit être entre 0 et 3000");
+      // et on indique de ne pas envoyer le formulaire
+      this.guessDateForm.reset();
+      return false;
+    }
+    
   }
+  
 }
