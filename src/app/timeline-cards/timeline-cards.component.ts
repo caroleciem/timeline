@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import{ DatasService } from '../datas.service';
+import { DatasService } from '../datas.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-timeline-cards',
@@ -8,10 +9,19 @@ import{ DatasService } from '../datas.service';
 })
 export class TimelineCardsComponent implements OnInit {
   cardsFounds = this.datasService.cardsFounds;
+  guessDateForm;
 
-  constructor(private datasService: DatasService) { }
+  constructor(
+    private datasService: DatasService,
+    private formBuilder: FormBuilder,
+    ) {
+      this.guessDateForm = this.formBuilder.group({
+        guessedDate: '',
+      });
+  }
 
   ngOnInit() {
   }
 
+  onSubmit(guessDate) {}
 }
