@@ -16,6 +16,8 @@ cards : Cards[]=[];
 cardsFounds : Cards[]=[];
 timelineLists : Timeline[];
 cardList: Cards[] = [];
+index:number;
+cardIndex: Cards;
 
 constructor(
   private httpClient: HttpClient,
@@ -35,6 +37,16 @@ getTimelines():Observable<Timeline[]>{
 
 getCardList(cardList) {
   this.cardList = cardList;
+  this.affichageCards(cardList.length);
+}
+affichageCards(max){
+  console.log(max);
+  this.index =Math.floor(Math.random() * Math.floor(max));
+  console.log("index"+this.index);
+  console.log(this.cardList);
+  console.log(this.cardList[7]);
+  this.cardIndex=this.cardList[this.index];
+  console.log("cardIndex" +this.cardIndex);
 }
 
 }
