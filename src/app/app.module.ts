@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([{path: '', component: TimelineListComponent},
       {path: 'cards/:timelineId', component: TimelineCardsComponent},]),
     ReactiveFormsModule
