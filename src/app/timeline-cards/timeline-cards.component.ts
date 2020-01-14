@@ -38,11 +38,13 @@ export class TimelineCardsComponent implements OnInit {
         console.log("ok");
         this.cardsFounds.push(this.card);
         this.cardList.splice(2, 1);
+        this.guessDateForm.reset();
         return true;
       } else {
-        console.log("ko");
+        this.guessDateForm.reset();
+        alert("Ce n'est pas la bonne date, réessayez!!!!");
       }
-      this.guessDateForm.reset();
+      
     } else {
       alert("la date doit être entre 0 et 3000");
       // et on indique de ne pas envoyer le formulaire
