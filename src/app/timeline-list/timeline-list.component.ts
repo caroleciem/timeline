@@ -7,13 +7,17 @@ import { DatasService } from '../datas.service';
   styleUrls: ['./timeline-list.component.css']
 })
 export class TimelineListComponent implements OnInit {
-  timelineList = this.datasService.timelineLists
+  
+  timelineList;
+
   constructor(private datasService: DatasService) { }
 
   ngOnInit() {
+    this.datasService.getTimelines().subscribe(dataList => this.timelineList = dataList);
   }
   supprimerTimeline(timelineId) {
     this.datasService.supprimerTimeline(timelineId);
+    
   }
 
 }
