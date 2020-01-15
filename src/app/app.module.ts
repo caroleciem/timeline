@@ -8,13 +8,17 @@ import { TimelineListComponent } from './timeline-list/timeline-list.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { TimelineCardsComponent } from './timeline-cards/timeline-cards.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TimelineEditComponent } from './timeline-edit/timeline-edit.component';
+import { TimelineCardEditComponent } from './timeline-card-edit/timeline-card-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TimelineListComponent,
     TopbarComponent,
-    TimelineCardsComponent
+    TimelineCardsComponent,
+    TimelineEditComponent,
+    TimelineCardEditComponent
   ],
   imports: [
     BrowserModule,
