@@ -14,6 +14,7 @@ export class TimelineCardsComponent implements OnInit {
   guessDateForm;
   card: Cards = this.datasService.renewCard();
   cardList = this.datasService.cardList;
+  index = this.datasService.index;
 
   constructor(
     private datasService: DatasService,
@@ -37,7 +38,7 @@ export class TimelineCardsComponent implements OnInit {
       if (guessedDate.date == this.card.date.substr(0, 4)) {
         console.log('ok');
         this.datasService.cardsFounds.push(this.card);
-        this.datasService.cardList.splice(2, 1);
+        this.datasService.cardList.splice(this.index, 1);
         this.card = this.datasService.renewCard();
         this.guessDateForm.reset();
         console.log(this.cardsFounds, this.cardList);

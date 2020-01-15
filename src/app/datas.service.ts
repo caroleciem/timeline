@@ -49,7 +49,6 @@ affichageCards(max) {
   this.index = Math.floor(Math.random() * Math.floor(max));
   console.log('index = ' + this.index);
   console.log(this.cardList);
-  console.log(this.cardList[7]);
   this.cardIndex = this.cardList[this.index];
   console.log('cardIndex : ' + this.cardIndex.name);
   return this.cardIndex;
