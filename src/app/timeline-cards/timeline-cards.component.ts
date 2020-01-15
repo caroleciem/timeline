@@ -36,9 +36,10 @@ export class TimelineCardsComponent implements OnInit {
     }
     if ((guessedDate.date > -1) && (guessedDate.date < 3000))  {
       if (guessedDate.date == this.card.date.substr(0, 4)) {
-        console.log('ok');
+        //console.log('ok');
         this.datasService.cardsFounds.push(this.card);
-        this.datasService.cardList.splice(this.index, 1);
+        console.log('indice supprimlé ', this.index);
+        this.datasService.cardList.splice(this.datasService.index, 1);
         this.card = this.datasService.renewCard();
         this.guessDateForm.reset();
         console.log(this.cardsFounds, this.cardList);
