@@ -12,7 +12,7 @@ import { Cards } from '../Cards';
 export class TimelineCardsComponent implements OnInit {
   cardsFounds = this.datasService.cardsFounds;
   guessDateForm;
-  card: Cards = this.datasService.cardList[2];
+  card: Cards = this.datasService.renewCard();
   cardList = this.datasService.cardList;
 
   constructor(
@@ -28,25 +28,27 @@ export class TimelineCardsComponent implements OnInit {
   }
 
   onSubmit(guessedDate) {
-    if (isNaN(guessedDate.date) == true){
-      alert("la date doit être entre 0 et 3000");
+    if (isNaN(guessedDate.date) == true) {
+      alert('la date doit être entre 0 et 3000');
       this.guessDateForm.reset();
       return false;
     }
     if ((guessedDate.date > -1) && (guessedDate.date < 3000))  {
       if (guessedDate.date == this.card.date.substr(0, 4)) {
-        console.log("ok");
-        this.cardsFounds.push(this.card);
-        this.cardList.splice(2, 1);
+        console.log('ok');
+        this.datasService.cardsFounds.push(this.card);
+        this.datasService.cardList.splice(2, 1);
+        this.card = this.datasService.renewCard();
         this.guessDateForm.reset();
+        console.log(this.cardsFounds, this.cardList);
         return true;
       } else {
         this.guessDateForm.reset();
-        alert("Ce n'est pas la bonne date, réessayez!!!!");
+        alert('Ce n\'est pas la bonne date, réessayez!!!!');
       }
-      
+
     } else {
-      alert("la date doit être entre 0 et 3000");
+      alert('la date doit être entre 0 et 3000');
       // et on indique de ne pas envoyer le formulaire
       this.guessDateForm.reset();
       return false;
