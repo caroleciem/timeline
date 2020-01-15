@@ -25,8 +25,9 @@ constructor(
 ) { this.getTimelines()}
 
 
-supprimerTimeline(timelineId) {
-  this.timelineLists.splice(timelineId, 1);
+supprimerTimeline(timelineId : number) {
+  timelineId++;
+  return this.httpClient.delete<number>('http://localhost:8080/api/timeline/'+timelineId)
 }
 
 getTimelines():Observable<Timeline[]>{

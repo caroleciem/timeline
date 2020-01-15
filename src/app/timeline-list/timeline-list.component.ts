@@ -19,7 +19,7 @@ export class TimelineListComponent implements OnInit {
   }
   supprimerTimeline(timelineId) {
     this.datasService.supprimerTimeline(timelineId
-      );
+      ).subscribe (datalist => this.datasService.getTimelines());
   }
 
   transfertCardList(cardList) {
