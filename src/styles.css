@@ -80,7 +80,8 @@ app-timeline-cards h1 {
     margin-left: 10px;
     margin-right: 10px;
   }
-  
+
+ 
   app-timeline-cards form button {
     margin-left: 10px;
     margin-right: 10px;
@@ -165,6 +166,17 @@ app-timeline-cards h1 {
   app-timeline-card-edit h3 {
     text-align: center;
     color:purple;
+  }
+
+  app-timeline-cards div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  app-timeline-cards div .button {
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
   }
   
   app-timeline-card-edit div img {
