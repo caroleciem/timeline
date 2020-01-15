@@ -24,7 +24,10 @@ import { TimelineCardEditComponent } from './timeline-card-edit/timeline-card-ed
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([{path: '', component: TimelineListComponent},
-      {path: 'cards', component: TimelineCardsComponent},]),
+      {path: 'cards', component: TimelineCardsComponent},
+      {path: 'editTimeline', component:  TimelineEditComponent},
+      {path: 'editCard', component:  TimelineCardEditComponent}
+      ]),
     ReactiveFormsModule
   ],
   providers: [],
