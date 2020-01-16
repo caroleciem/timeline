@@ -63,4 +63,8 @@ majCards(card :Cards){
   this.cardList.splice(this.indexAMod,1,this.cardAMod)
  
 }
+ajCards(card :Cards){
+  this.cardList.push(card);
+ 
+}
 }
