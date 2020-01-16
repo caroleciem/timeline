@@ -15,6 +15,7 @@ export class TimelineCardsComponent implements OnInit {
   card: Cards = this.datasService.renewCard();
   cardList = this.datasService.cardList;
   index = this.datasService.index;
+  
 
   constructor(
     private datasService: DatasService,

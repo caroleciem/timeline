@@ -18,7 +18,9 @@ timelineLists : Timeline[];
 cardList: Cards[] = [];
 index:number;
 cardIndex: Cards;
-endOfGameCard: Cards = { name: 'BRAVO !!!', date: '', imageUrl: 'https://previews.123rf.com/images/vectorshowstudio/vectorshowstudio1608/vectorshowstudio160800408/61234649-vector-troph%C3%A9e-champion-tasse-ic%C3%B4ne-plat-champion-vainqueur-de-la-coupe-attribution-du-troph%C3%A9e-et-le-prix-d.jpg', description: 'Vous avez deviné toutes les dates !!'};
+indexAMod = 1;
+cardAMod = { "id": 1, "name": "Facebook", "date": "2004-02-03", "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg", "description": "Invention du plus célèbre réseau social" };
+endOfGameCard: Cards = { "id": 0,name: 'BRAVO !!!', date: '', imageUrl: 'https://previews.123rf.com/images/vectorshowstudio/vectorshowstudio1608/vectorshowstudio160800408/61234649-vector-troph%C3%A9e-champion-tasse-ic%C3%B4ne-plat-champion-vainqueur-de-la-coupe-attribution-du-troph%C3%A9e-et-le-prix-d.jpg', description: 'Vous avez deviné toutes les dates !!'};
 
 constructor(
   private httpClient: HttpClient,
@@ -49,14 +51,18 @@ renewCard() {
 affichageCards(max) {
   if (max !== 0) {
     this.index = Math.floor(Math.random() * Math.floor(max));
-    console.log('index initial = ' + this.index);
-    console.log(this.cardList);
     this.cardIndex = this.cardList[this.index];
-    console.log('cardIndex : ' + this.cardIndex.name);
     return this.cardIndex;
   } else {
     return this.endOfGameCard;
   }
+
+}
+majCards(card :Cards){
+  console.log(card);
+  console.log(this.cardList);
+  this.cardList.splice(this.indexAMod,1,this.cardAMod)
+  console.log(this.cardList);
 
 }
 }

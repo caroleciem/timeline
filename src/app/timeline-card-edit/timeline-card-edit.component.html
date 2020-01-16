@@ -10,19 +10,19 @@
         <label for="name">
                 Nom
         </label>
-        <input id="name" type="text" formControlName="name" placeholder={{card.name}}>
+        <input id="name" type="text" formControlName="name" value={{card.name}}>
         <label for="date">
                 Date au format : AAAA-MM-JJ
         </label>
-        <input id="date" type="text" formControlName="date" placeholder={{card.date}}>
+        <input id="date" type="text" formControlName="date"  value={{card.date}}>
         <label for="imgUrl">
                Lien HTTP vers l'image
         </label>
-        <input id="imgUrl" type="text" formControlName="imgUrl" placeholder={{card.imageUrl}}>
+        <input id="imgUrl" type="text" formControlName="imgUrl" pattern="http?://.+" value={{card.imageUrl}}>
         <label for="description">
                 Description
          </label>
-        <input id="description" type="text" formControlName="description" placeholder={{card.description}}>
+        <input id="description" type="text" formControlName="description" value={{card.description}}>
         <button class="button" type="submit">VALIDER</button>
 </form>
       
