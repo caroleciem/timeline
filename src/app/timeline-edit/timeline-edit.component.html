@@ -1,1 +1,39 @@
-<p>timeline-edit works!</p>
+
+<h1>Timeline</h1>
+
+<section>
+  <form [formGroup]="editTimelineForm" (ngSubmit)="onSubmit(editTimelineForm.value)">
+
+    <div>
+      <label for="name">Nom : </label>
+      <input id="name" type="text" formControlName="name" placeholder="{{timelineLists.name}}">
+    </div>
+
+    <div>
+      <label for="category">Catégorie : </label>
+      <input id="category" type="text" formControlName="category" placeholder="{{timelineLists.category}}">
+    </div>
+
+    <div>
+      <h3>Date de dernière mise à jour : {{timelineLists.updateDate}}</h3>
+    </div>
+    <button class="button" type="submit">Modifier</button>
+
+  </form>
+</section>
+
+<h1>Liste des cartes</h1>
+
+<section>
+  <div>
+    <div class="cards">
+      <h2>{{card.name}}</h2>
+      <img src='{{card.imageUrl}}'>
+      <h3>{{card.description}}</h3>
+    </div>
+    <div>
+      <button class="button" type="submit" (click)="modifyTimelineCard()"><a [routerLink]="['/editCard']">Modifier</a></button>
+      <button class="button" type="submit" (click)="deleteTimelineCard()">Supprimer</button>
+    </div>
+  </div>
+</section>

@@ -134,89 +134,63 @@ app-timeline-cards h1 {
     height: 30%;
   }
 
-  app-timeline-card-edit .cards {
+  app-timeline-edit h1 {
+    text-align: center;
+    color:purple;
+  }
+  
+  app-timeline-edit h2 {
+    text-align: center;
+    color:purple;
+  }
+  
+  app-timeline-edit section div div h3 {
+    text-align: center;
+    color:purple;
+  }
+  
+  app-timeline-edit section div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  app-timeline-edit section button {
+    width: 10%;
+    margin: 0px 10px;
+  }
+  
+  app-timeline-edit section div .cards {
     display: flex;
     flex-direction: column;
     border: 1px solid grey;
     border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    /*margin-left: auto;
+    margin-right: auto;*/
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: 10px;
     width: 25%;
     height: 300px;
     background-color: lightgrey;
   }
-  app-timeline-card-edit form {
+  
+  app-timeline-edit section div div {
     display: flex;
     flex-direction: column;
-    align-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    
-  }
-  app-timeline-card-edit h1{
-    text-align: center;
-  }
-  app-timeline-card-edit h2 {
-    text-align: center;
-    color:purple;
+    align-items: center;
   }
   
-  app-timeline-card-edit h3 {
-    text-align: center;
-    color:purple;
-  }
-
-  app-timeline-cards div {
-    display: flex;
-    flex-direction: column;
+  app-timeline-edit section div div button {
+    margin: 0px;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   
-  app-timeline-cards div .button {
-    margin-bottom: 50px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  
-  app-timeline-card-edit div img {
+  app-timeline-edit div div img {
     margin: auto;
     width: 30%;
     height: 30%;
   }
-  app-timeline-card-edit form input {
-    width: 60%;
-    margin-top: 10px;
-    margin-bottom: 10px; 
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-  }
-  app-timeline-card-edit form input #imgUrl{
-    width: fit-content;
-  }
-  app-timeline-card-edit form label {
-    border : 1px solid black;
-    border-radius: 10px;
-    background-color: pink;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: 60%;
-  }  
-
-  app-timeline-card-edit form button {
-    
-    background-color: aquamarine;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    text-align: center;
-    width: 10%;
-    align-items: center;
-  }  
-
-   
-  
