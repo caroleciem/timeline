@@ -1,28 +1,39 @@
-<h1> Carte à modifier</h1>
 
-<div class="cards">
-  <h2>{{card.name}}</h2>
-  <img src="{{card.imageUrl}}">
-  <h3>{{card.description}}</h3>
-</div>
+<h1>Timeline</h1>
 
-<form [formGroup]="cardForm" (ngSubmit)="onSubmit(cardForm.value)">
-  <label for="name">
-    Nom
-  </label>
-  <input id="name" type="text" formControlName="name" value={{card.name}}>
-  <label for="date">
-    Date au format : AAAA-MM-JJ
-  </label>
-  <input id="date" type="text" formControlName="date"  value={{card.date}}>
-  <label for="imgUrl">
-    Lien HTTP vers l'image
-  </label>
-  <input id="imgUrl" type="text" formControlName="imgUrl" pattern="http?://.+" value={{card.imageUrl}}>
-  <label for="description">
-    Description
-  </label>
-  <input id="description" type="text" formControlName="description" value={{card.description}}>
-  <button class="button" type="submit">VALIDER</button>
-</form>
+<section>
+  <form [formGroup]="editTimelineForm" (ngSubmit)="onSubmit(editTimelineForm.value)">
 
+    <div>
+      <label for="name">Nom : </label>
+      <input id="name" type="text" formControlName="name" placeholder="{{timelineAMod.name}}">
+    </div>
+
+    <div>
+      <label for="category">Catégorie : </label>
+      <input id="category" type="text" formControlName="category" placeholder="{{timelineAMod.category}}">
+    </div>
+
+    <div>
+      <h3>Date de dernière mise à jour : {{timelineAMod.updateDate}}</h3>
+    </div>
+    <button class="button" type="submit">Modifier</button>
+
+  </form>
+</section>
+
+<h1>Liste des cartes</h1>
+
+<section>
+  <div *ngFor="let card of cards; index as cardId">
+    <div class="cards">
+      <h2>{{card.name}}</h2>
+      <img src='{{card.imageUrl}}'>
+      <h3>{{card.description}}</h3>
+    </div>
+    <div>
+      <button class="button" type="submit" (click)="modifyTimelineCard(card, cardId)"><a [routerLink]="['/editCard']">Modifier</a></button>
+      <button class="button" type="submit" (click)="deleteTimelineCard(cardId)">Supprimer</button>
+    </div>
+  </div>
+</section>
