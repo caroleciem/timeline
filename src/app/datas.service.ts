@@ -21,6 +21,7 @@ index:number;
 cardIndex: Cards;
 indexAMod = 1;
 cardAMod;
+maxId:number;
 endOfGameCard: Cards = { "id": 0,name: 'BRAVO !!!', date: '', imageUrl: 'https://previews.123rf.com/images/vectorshowstudio/vectorshowstudio1608/vectorshowstudio160800408/61234649-vector-troph%C3%A9e-champion-tasse-ic%C3%B4ne-plat-champion-vainqueur-de-la-coupe-attribution-du-troph%C3%A9e-et-le-prix-d.jpg', description: 'Vous avez deviné toutes les dates !!'};
 
 constructor(
@@ -61,11 +62,15 @@ affichageCards(max) {
 
 }
 majCards(card :Cards){
-  this.cardList.splice(this.indexAMod,1,this.cardAMod)
- 
+
+  this.timelineAMod.cardList.splice(this.indexAMod,1,this.cardAMod)
+  console.log("coucou");
+  console.log(this.timelineAMod.cardList);
 }
-ajCards(card :Cards){
-  this.cardList.push(card);
- 
-}
+  ajCards(card :Cards){
+  this.timelineAMod.cardList.push(card);
+  }
+  chercheIdMax(timeline){
+  this.maxId = this.timelineAMod.cardList.length;
+  }
 }
