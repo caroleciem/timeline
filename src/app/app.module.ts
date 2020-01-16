@@ -10,6 +10,7 @@ import { TimelineCardsComponent } from './timeline-cards/timeline-cards.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { TimelineEditComponent } from './timeline-edit/timeline-edit.component';
 import { TimelineCardEditComponent } from './timeline-card-edit/timeline-card-edit.component';
+import { CardAjoutComponent } from './card-ajout/card-ajout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TimelineCardEditComponent } from './timeline-card-edit/timeline-card-ed
     TopbarComponent,
     TimelineCardsComponent,
     TimelineEditComponent,
-    TimelineCardEditComponent
+    TimelineCardEditComponent,
+    CardAjoutComponent
   ],
   imports: [
     BrowserModule,
