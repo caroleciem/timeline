@@ -21,7 +21,7 @@
                 <td> {{timeline.creationDate}}</td>
                 <td> {{timeline.updateDate}}</td>
                 <td> {{timeline.cardList.length}}</td>
-                <td> <a [routerLink]="['editTimeline']">Editer</a></td>
+                <td> <a [routerLink]="['editTimeline']" (click)="transfertTimeline(timeline)">Editer</a></td>
                 <td> <a [routerLink]="['cards']" (click)="transfertCardList(timeline.cardList)">Jouer</a></td>
                 <td> <button (click)="supprimerTimeline(timelineId)" class="supprimer">Supprimer</button></td>
             </tr>

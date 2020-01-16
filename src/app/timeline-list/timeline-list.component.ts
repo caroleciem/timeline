@@ -26,4 +26,13 @@ export class TimelineListComponent implements OnInit {
     this.datasService.getCardList(cardList);
   }
 
+  transfertTimeline(timeline) {
+    if (timeline.cardList.length !== 0 ) {
+    this.datasService.timelineAMod = timeline;
+  } else {
+    timeline.cardList = [];
+    this.datasService.timelineAMod = timeline;
+    }
+  }
+
 }
