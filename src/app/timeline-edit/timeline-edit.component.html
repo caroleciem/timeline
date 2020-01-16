@@ -23,6 +23,7 @@
 </section>
 
 <h1>Liste des cartes</h1>
+<button class="button" type="submit"><a [routerLink]="['/ajoutCard']">Créer une nouvelle carte</a></button>
 
 <section>
   <div *ngFor="let card of cards; index as cardId">

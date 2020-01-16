@@ -155,6 +155,11 @@ app-timeline-cards h1 {
     align-items: center;
     justify-content: center;
   }
+
+  app-timeline-edit button {
+    width: 10%;
+    margin: 0px 45%;
+  }
   
   app-timeline-edit section button {
     width: 10%;
