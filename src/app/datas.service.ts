@@ -29,6 +29,7 @@ constructor(
 
 supprimerTimeline(timelineId : number) {
   timelineId++;
+this.timelineLists.splice(timelineId, 1);
   return this.httpClient.delete<number>('http://localhost:8080/api/timeline/'+timelineId);
 }
 
