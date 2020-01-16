@@ -64,13 +64,17 @@ affichageCards(max) {
 majCards(card :Cards){
 
   this.timelineAMod.cardList.splice(this.indexAMod,1,this.cardAMod)
-  console.log("coucou");
-  console.log(this.timelineAMod.cardList);
+ 
 }
   ajCards(card :Cards){
   this.timelineAMod.cardList.push(card);
+  alert('la carte a bien été ajoutée');
+
   }
-  chercheIdMax(timeline){
+  chercheIdMax(){
+    
   this.maxId = this.timelineAMod.cardList.length;
+  return this.maxId;
+
   }
 }

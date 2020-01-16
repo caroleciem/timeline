@@ -12,6 +12,7 @@ import { DatasService } from '../datas.service';
 export class CardAjoutComponent implements OnInit {
   cardAjForm;
   card: Cards;
+  maxId:number;
   constructor(private datasService: DatasService,
     private formBuilder: FormBuilder, ) {
     this.cardAjForm = this.formBuilder.group({
@@ -59,14 +60,17 @@ export class CardAjoutComponent implements OnInit {
     if (cardData.description == "") {
       cardData.description = " ";
     }
-    console.log('cardData')
-    console.log(cardData)
+    console.log("coucou");
+    console.log(this.datasService.chercheIdMax());
+    
+    console.log(this.datasService.maxId);
     this.card.name = cardData.name;
     this.card.date = cardData.date;
     this.card.imageUrl = cardData.imgUrl;
     this.card.description = cardData.description;
-    console.log("this.card")
-    console.log(this.card);
+    
+    this.card.id= this.datasService.maxId;
     this.datasService.ajCards(this.card);
+    
   }
 }

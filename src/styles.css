@@ -329,7 +329,7 @@ app-timeline-cards h1 {
     width: 60%;
   }
 
-  app-timeline-card-edit form button {
+  app-card-ajout form button {
 
     background-color: aquamarine;
     margin-left: auto;
