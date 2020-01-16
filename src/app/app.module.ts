@@ -28,6 +28,7 @@ import { CardAjoutComponent } from './card-ajout/card-ajout.component';
     RouterModule.forRoot([{path: '', component: TimelineListComponent},
       {path: 'cards', component: TimelineCardsComponent},
       {path: 'editTimeline', component:  TimelineEditComponent},
+      {path: 'ajoutCard', component:  CardAjoutComponent},
       {path: 'editCard', component:  TimelineCardEditComponent}
       ]),
     ReactiveFormsModule

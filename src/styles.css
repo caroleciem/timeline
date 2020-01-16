@@ -267,3 +267,70 @@ app-timeline-cards h1 {
     width: 10%;
     align-items: center;
   }
+  app-card-ajout .cards {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 25%;
+    height: 300px;
+    background-color: lightgrey;
+  }
+  app-card-ajout form {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  app-card-ajout h1{
+    text-align: center;
+  }
+  app-card-ajout h2 {
+    text-align: center;
+    color:purple;
+  }
+
+  app-card-ajout h3 {
+    text-align: center;
+    color:purple;
+  }
+
+  app-card-ajout form input {
+    width: 60%;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+  aapp-card-ajout form input #imgUrl{
+    width: fit-content;
+  }
+  app-card-ajout form label {
+    border : 1px solid black;
+    border-radius: 10px;
+    background-color: pink;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 60%;
+  }
+
+  app-timeline-card-edit form button {
+
+    background-color: aquamarine;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    text-align: center;
+    width: 10%;
+    align-items: center;
+  }
