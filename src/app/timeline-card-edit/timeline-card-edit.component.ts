@@ -24,7 +24,6 @@ export class TimelineCardEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.card = this.card;
   }
 
   onSubmit(cardData) {

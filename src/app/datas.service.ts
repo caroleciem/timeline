@@ -20,7 +20,7 @@ cardList: Cards[] = [];
 index:number;
 cardIndex: Cards;
 indexAMod = 1;
-cardAMod = { "id": 1, "name": "Facebook", "date": "2004-02-03", "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg", "description": "Invention du plus célèbre réseau social" };
+cardAMod;
 endOfGameCard: Cards = { "id": 0,name: 'BRAVO !!!', date: '', imageUrl: 'https://previews.123rf.com/images/vectorshowstudio/vectorshowstudio1608/vectorshowstudio160800408/61234649-vector-troph%C3%A9e-champion-tasse-ic%C3%B4ne-plat-champion-vainqueur-de-la-coupe-attribution-du-troph%C3%A9e-et-le-prix-d.jpg', description: 'Vous avez deviné toutes les dates !!'};
 
 constructor(

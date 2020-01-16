@@ -32,7 +32,7 @@
       <h3>{{card.description}}</h3>
     </div>
     <div>
-      <button class="button" type="submit" (click)="modifyTimelineCard(card, cardId)"><a [routerLink]="['/editCard']">Modifier</a></button>
+      <button class="button" type="submit"><a [routerLink]="['/editCard']" (click)="modifyTimelineCard(card, cardId)">Modifier</a></button>
       <button class="button" type="submit" (click)="deleteTimelineCard(cardId)">Supprimer</button>
     </div>
   </div>
