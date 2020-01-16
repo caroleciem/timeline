@@ -28,7 +28,7 @@ export class TimelineCardEditComponent implements OnInit {
   }
 
   onSubmit(cardData) {
-    console.log(this.datasService.cardList);
+    
     if ((cardData.name == "") && (cardData.date == "") && (cardData.imgUrl == "") && (cardData.description == "")){
       alert('Aucun champ n\'a été modifié' )
     }
@@ -69,7 +69,6 @@ export class TimelineCardEditComponent implements OnInit {
     this.card.date =cardData.date;
     this.card.imageUrl=cardData.imgUrl;
     this.card.description=cardData.description;
-    console.log(this.datasService.cardList);
     this.datasService.majCards(this.card);
 
 

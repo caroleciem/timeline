@@ -59,10 +59,7 @@ affichageCards(max) {
 
 }
 majCards(card :Cards){
-  console.log(card);
-  console.log(this.cardList);
   this.cardList.splice(this.indexAMod,1,this.cardAMod)
-  console.log(this.cardList);
-
+ 
 }
 }
