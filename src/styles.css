@@ -134,6 +134,12 @@ app-timeline-cards h1 {
     height: 30%;
   }
 
+  app-timeline-cards div button {
+    width: 10%;
+    margin: 0px 45%;
+  }
+
+
   app-timeline-edit h1 {
     text-align: center;
     color:purple;

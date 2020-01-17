@@ -29,6 +29,10 @@ export class TimelineCardsComponent implements OnInit {
   ngOnInit() {
   }
 
+  passCard() {
+    this.card = this.datasService.renewCard();
+  }
+
   onSubmit(guessedDate) {
     if (isNaN(guessedDate.date) == true) {
       alert('la date doit être entre 0 et 3000');
