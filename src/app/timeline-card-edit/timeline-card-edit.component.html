@@ -7,23 +7,23 @@
 </div>
 
 <form [formGroup]="cardForm" (ngSubmit)="onSubmit(cardForm.value)">
-        <label for="name">
-                Nom
-        </label>
-        <input id="name" type="text" formControlName="name" value={{card.name}}>
-        <label for="date">
-                Date au format : AAAA-MM-JJ
-        </label>
-        <input id="date" type="text" formControlName="date"  value={{card.date}}>
-        <label for="imgUrl">
-               Lien HTTP vers l'image
-        </label>
-        <input id="imgUrl" type="text" formControlName="imgUrl" pattern="http?://.+" value={{card.imageUrl}}>
-        <label for="description">
-                Description
-         </label>
-        <input id="description" type="text" formControlName="description" value={{card.description}}>
-        <button class="button" type="submit">VALIDER</button>
-        <button class="button" type="submit"><a [routerLink]="['/editTimeline']">Retour au Timeline</a></button>
+  <label for="name">
+    Nom
+  </label>
+  <input id="name" type="text" formControlName="name" value={{card.name}}>
+  <label for="date">
+    Date au format : AAAA-MM-JJ
+  </label>
+  <input id="date" type="text" formControlName="date"  value={{card.date}}>
+  <label for="imgUrl">
+    Lien HTTP vers l'image
+  </label>
+  <input id="imgUrl" type="text" formControlName="imgUrl" pattern="http?://.+" value={{card.imageUrl}}>
+  <label for="description">
+    Description
+  </label>
+  <input id="description" type="text" formControlName="description" value={{card.description}}>
+  <button class="button" type="submit">VALIDER</button>
+  <button class="button" type="submit"><a [routerLink]="['/editTimeline']">Retour au Timeline</a></button>
 </form>
-      
+

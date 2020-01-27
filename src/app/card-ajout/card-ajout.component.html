@@ -8,23 +8,23 @@
 </div>
 
 <form [formGroup]="cardAjForm" (ngSubmit)="onSubmit(cardAjForm.value)">
-        <label for="name">
-                Nom
-        </label>
-        <input id="name" type="text" formControlName="name" placeholder="Facebook">
-        <label for="date">
-                Date au format : AAAA-MM-JJ
-        </label>
-        <input id="date" type="text" formControlName="date"  placeholder="2004-02-03">
-        <label for="imgUrl">
-               Lien HTTP vers l'image
-        </label>
-        <input id="imgUrl" type="text" formControlName="imgUrl" pattern="http?://.+" placeholder="https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg">
-        <label for="description">
-                Description
-         </label>
-        <input id="description" type="text" formControlName="description" placeholder="Invention du plus célèbre réseau social">
-        <button class="button" type="submit">VALIDER</button>
-        <button class="button" type="submit"><a [routerLink]="['/editTimeline']">Retour au Timeline</a></button>
+  <label for="name">
+    Nom
+  </label>
+  <input id="name" type="text" formControlName="name" placeholder="Facebook">
+  <label for="date">
+    Date au format : AAAA-MM-JJ
+  </label>
+  <input id="date" type="text" formControlName="date"  placeholder="2004-02-03">
+  <label for="imgUrl">
+    Lien HTTP vers l'image
+  </label>
+  <input id="imgUrl" type="text" formControlName="imgUrl" pattern="http?://.+" placeholder="https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg">
+  <label for="description">
+    Description
+  </label>
+  <input id="description" type="text" formControlName="description" placeholder="Invention du plus célèbre réseau social">
+  <button class="button" type="submit">VALIDER</button>
+  <button class="button" type="submit"><a [routerLink]="['/editTimeline']">Retour au Timeline</a></button>
 </form>
-      
+

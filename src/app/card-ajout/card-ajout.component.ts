@@ -14,7 +14,7 @@ export class CardAjoutComponent implements OnInit {
   card: Cards;
   maxId:number;
   constructor(private datasService: DatasService,
-    private formBuilder: FormBuilder, ) {
+              private formBuilder: FormBuilder, ) {
     this.cardAjForm = this.formBuilder.group({
       name: '',
       date: '',
@@ -60,17 +60,14 @@ export class CardAjoutComponent implements OnInit {
     if (cardData.description == "") {
       cardData.description = " ";
     }
-    console.log("coucou");
-    console.log(this.datasService.chercheIdMax());
-    
-    console.log(this.datasService.maxId);
+
     this.card.name = cardData.name;
     this.card.date = cardData.date;
     this.card.imageUrl = cardData.imgUrl;
     this.card.description = cardData.description;
-    
+
     this.card.id= this.datasService.maxId;
     this.datasService.ajCards(this.card);
-    
+
   }
 }

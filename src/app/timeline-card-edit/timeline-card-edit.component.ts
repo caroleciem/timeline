@@ -10,31 +10,33 @@ import { DatasService } from '../datas.service';
 })
 export class TimelineCardEditComponent implements OnInit {
 
-  //card: Cards = { "name": "Facebook", "date": "2004-02-03", "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg", "description": "Invention du plus célèbre réseau social" };
-  card :Cards = this.datasService.cardAMod;
+  // tslint:disable-next-line:max-line-length
+  // card: Cards = { "name": "Facebook", "date": "2004-02-03", "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Facebook_New_Logo_%282015%29.svg", "description": "Invention du plus célèbre réseau social" };
+  card: Cards = this.datasService.cardAMod;
   cardForm;
   constructor(private datasService: DatasService,
-    private formBuilder: FormBuilder, ) {
+              private formBuilder: FormBuilder, ) {
     this.cardForm = this.formBuilder.group({
       name: '',
       date: '',
       imgUrl: '',
       description: '',
-    })
+    });
   }
 
   ngOnInit() {
+    // console.log(this.card);
   }
 
   onSubmit(cardData) {
-    
+
     if ((cardData.name == "") && (cardData.date == "") && (cardData.imgUrl == "") && (cardData.description == "")){
-      alert('Aucun champ n\'a été modifié' )
+      alert('Aucun champ n\'a été modifié');
     }
 
     if (cardData.name == "") {
       cardData.name = this.card.name;
-      
+
     }
 
     if (cardData.date != "") {
@@ -53,24 +55,22 @@ export class TimelineCardEditComponent implements OnInit {
 
         return false;
       }
-    } else{
+    } else {
       cardData.date = this.card.date;
-     
     }
 
     if (cardData.imgUrl == "") {
-      cardData.imgUrl = this.card.imageUrl
+      cardData.imgUrl = this.card.imageUrl;
     }
     if (cardData.description == "") {
-     cardData.description = this.card.description;
+      cardData.description = this.card.description;
     }
     this.card.name = cardData.name;
-    this.card.date =cardData.date;
-    this.card.imageUrl=cardData.imgUrl;
-    this.card.description=cardData.description;
+    this.card.date = cardData.date;
+    this.card.imageUrl = cardData.imgUrl;
+    this.card.description = cardData.description;
     this.datasService.majCards(this.card);
-
-
+    console.log(this.datasService.cardAMod);
   }
 
 }

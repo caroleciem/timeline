@@ -1,10 +1,10 @@
-import {Cards}  from './Cards';
+import {Cards} from './Cards';
 export interface Timeline {
-    id : Number;
-    name: String;
-    creationDate :String;
-    updateDate :String;
-    category:String;
-    CardsLists : Cards [];
+  id: number;
+  name: string;
+  creationDate: string;
+  updateDate: string;
+  category: string;
+  cardList: Cards [];
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatasService } from '../datas.service';
 import { FormBuilder } from '@angular/forms';
-import { Cards } from '../Cards';
+import {Cards} from '../Cards';
 
 @Component({
   selector: 'app-timeline-cards',
@@ -13,17 +13,16 @@ export class TimelineCardsComponent implements OnInit {
   cardsFounds = this.datasService.cardsFounds;
   guessDateForm;
   card: Cards = this.datasService.renewCard();
-  cardList = this.datasService.cardList;
+  cardList: Cards[] = this.datasService.cardList;
   index = this.datasService.index;
-  
 
   constructor(
     private datasService: DatasService,
     private formBuilder: FormBuilder,
-  ) {
-    this.guessDateForm = this.formBuilder.group({
-      date: '',
-    });
+    ) {
+      this.guessDateForm = this.formBuilder.group({
+        date: '',
+      });
   }
 
   ngOnInit() {
@@ -41,13 +40,11 @@ export class TimelineCardsComponent implements OnInit {
     }
     if ((guessedDate.date > -1) && (guessedDate.date < 3000))  {
       if (guessedDate.date == this.card.date.substr(0, 4)) {
-        //console.log('ok');
         this.datasService.cardsFounds.push(this.card);
-        console.log('indice supprimlé ', this.index);
-        this.datasService.cardList.splice(this.datasService.index, 1);
+        this.cardsFounds = this.datasService.cardsFounds;
+        this.cardList = this.datasService.cardList.splice(this.datasService.index, 1);
         this.card = this.datasService.renewCard();
         this.guessDateForm.reset();
-        console.log(this.cardsFounds, this.cardList);
         return true;
       } else {
         this.guessDateForm.reset();
@@ -60,7 +57,5 @@ export class TimelineCardsComponent implements OnInit {
       this.guessDateForm.reset();
       return false;
     }
-    
   }
-  
 }
